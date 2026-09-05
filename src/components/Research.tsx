@@ -81,13 +81,13 @@ export const Research: React.FC = () => {
             </div>
           </div>
 
-          {/* Research & Production Connection */}
+          {/* Research & Interaction Connection */}
           <div className="pt-4 border-t border-slate-100 dark:border-slate-800">
             <div className="flex items-center gap-2 text-xs font-medium text-slate-500 dark:text-slate-400">
               <Sparkles className="w-3.5 h-3.5 text-sky-500" />
-              <span>関連する試作プロトタイプ:</span>
+              <span>現場課題解決・対話UIの実践:</span>
               <a href="#works" className="text-sky-600 dark:text-sky-400 hover:underline font-semibold">
-                きもちパレット（感情可視化とAI対話の試作）
+                「みちのきろく」や各種Webプロトタイプ一覧を見る
               </a>
             </div>
           </div>

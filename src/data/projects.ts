@@ -21,6 +21,7 @@ export const projects: Project[] = [
       '現場フィードバックに基づく段階的UI改善'
     ],
     tags: ['業務整理', '要件定義', 'UI設計', 'React', 'TypeScript', 'Tailwind CSS', 'Supabase'],
+    demoUrl: 'https://michino.vercel.app',
     githubUrl: 'https://github.com/BBHF810/michino',
   },
   {
@@ -42,28 +43,8 @@ export const projects: Project[] = [
       '進行タイマーと視覚的アラート'
     ],
     tags: ['自主制作', 'UI/UXデザイン', 'JavaScript', 'HTML/CSS', 'Chart.js', 'Firebase'],
+    demoUrl: 'https://shiburin-note.vercel.app',
     githubUrl: 'https://github.com/BBHF810/shiburin-note',
-  },
-  {
-    id: 'feeling',
-    title: 'きもちパレット (Kimochi Palette)',
-    subtitle: '感情の可視化とAI対話による内省支援プロトタイプ（自主制作）',
-    type: 'self-initiated',
-    isPrimary: true,
-    period: '2025',
-    role: 'コンセプト設計・UIデザイン・AIプロンプト設計・実装',
-    accentColor: '#ec4899', // pink
-    summary: '言葉にしづらい心の状態や気分を「色」の直感的な選択から言語化し、AIとの対話を通じて自己理解を深めるエモーショナルUIの試作。',
-    background: '「今の気分を文章で入力してください」と言われても言語化が難しいユーザーに対し、色の直感的な選択を入り口とし、AIが壁打ち相手となることで自己の内省を助ける手法を探求しました（自身の修士研究の関心とも接続する試作）。',
-    approach: '色彩心理に基づくグラデーションパレットを用意し、選択した色合いとユーザーの短い呟きを手がかりに、Gemini APIを用いて共感的で圧迫感のない問いかけを生成するプロンプトを設計しました。',
-    outcome: '色の選択という身体的・直感的な入力が、テキスト入力への心理的ハードルをどう下げるかをプロトタイプを通じて検証しました。',
-    features: [
-      'カラーパレット選択による直感的な感情入力',
-      'Google Gemini APIを活用した共感・問いかけ対話',
-      '過去のパレット履歴を振り返るアーカイブ機能'
-    ],
-    tags: ['自主制作', 'Human-AI Interaction', 'React 19', 'TypeScript', 'Gemini API'],
-    githubUrl: 'https://github.com/BBHF810/feeling',
   },
   {
     id: 'number_legend',
@@ -84,6 +65,7 @@ export const projects: Project[] = [
       '直感的でわかりやすい操作パネル'
     ],
     tags: ['自主制作', '知育UI', 'React 19', 'TypeScript', 'Gemini API'],
+    demoUrl: 'https://number-legend.vercel.app',
     githubUrl: 'https://github.com/BBHF810/number_legend',
   },
   {
@@ -91,7 +73,7 @@ export const projects: Project[] = [
     title: 'Galactic Splat Kids',
     subtitle: '3D WebGL / React Three Fiber インタラクティブ空間試作',
     type: 'self-initiated',
-    isPrimary: false,
+    isPrimary: true,
     period: '2025',
     role: '3Dシーン設計・フロントエンド実装',
     accentColor: '#f59e0b', // amber
@@ -101,6 +83,7 @@ export const projects: Project[] = [
     outcome: 'Web上での3Dレンダリング制御やパフォーマンスの勘所を習得しました。',
     features: ['3Dリアルタイム空間描画', 'カメラ操作とライティング演出'],
     tags: ['自主制作', '3D WebGL', 'Three.js', 'React Three Fiber', 'TypeScript'],
+    demoUrl: 'https://arata-fawn.vercel.app',
     githubUrl: 'https://github.com/BBHF810/arata',
   },
   {
@@ -118,6 +101,7 @@ export const projects: Project[] = [
     outcome: 'ステップフォームにおける状態管理とユーザー導線の設計を学びました。',
     features: ['ステップ式診断UI', '買い出し量・予算の動的計算'],
     tags: ['自主制作', 'React 19', 'TypeScript', 'React Router', 'Lucide React'],
+    demoUrl: 'https://banquet-record.vercel.app',
     githubUrl: 'https://github.com/BBHF810/banquet-record',
   },
   {
@@ -135,24 +119,44 @@ export const projects: Project[] = [
     outcome: 'モバイルファーストな入力UIとリアルタイムDB同期の実装経験を得ました。',
     features: ['モバイル向けクイックスコア入力', 'レーティング自動算出'],
     tags: ['自主制作', 'React 19', 'TypeScript', 'Supabase'],
+    demoUrl: 'https://ranking-smoky.vercel.app',
     githubUrl: 'https://github.com/BBHF810/ranking',
   },
   {
-    id: 'propose',
-    title: 'Propose',
-    subtitle: 'WebRTC P2P リアルタイム対話プロトタイプ',
+    id: 'icebreak-cafe',
+    title: 'Icebreak Cafe',
+    subtitle: '対話活性化・アイスブレイク支援Webツール',
     type: 'self-initiated',
     isPrimary: false,
     period: '2025',
-    role: 'ネットワーク設計・フロントエンド開発',
+    role: '企画・UI設計・フロントエンド開発',
     accentColor: '#8b5cf6', // purple
-    summary: 'Next.js 16とPeerJS（WebRTC）による、低遅延なP2P通信を用いた情報共有ツールの技術試作。',
-    background: 'サーバー負荷を抑えた端末間ダイレクト通信の仕組みを学ぶため、P2P接続とステータス表示のUIを実装しました。',
-    approach: 'ルームIDによる接続確立と、通信状態（接続中・待機中）の可視化を試みました。',
-    outcome: 'WebRTCのシグナリング手順とP2P状態管理の基礎を習得しました。',
-    features: ['P2Pデータ通信', 'ルーム接続管理'],
-    tags: ['自主制作', 'Next.js 16', 'React 19', 'WebRTC', 'PeerJS'],
-    githubUrl: 'https://github.com/BBHF810/propose',
+    summary: 'ワークショップや初対面の場において、参加者同士の心理的距離を縮めるためのしりとり・アイスブレイク対話支援アプリ。',
+    background: '初対面の参加者が集まる場での緊張をほぐし、自然な発言と笑顔を生み出すカジュアルなゲームUIを模索しました。',
+    approach: 'シンプルで迷わないルール設計と、テンポよく進行できる操作画面を意識して実装しました。',
+    outcome: '対話を促すマイクロインタラクションとカジュアルゲームUIの設計経験を得ました。',
+    features: ['しりとりゲーム・お題提示', '参加型対話UI'],
+    tags: ['自主制作', '対話UI', 'JavaScript', 'HTML/CSS'],
+    demoUrl: 'https://icebreak-cafe.vercel.app',
+    githubUrl: 'https://github.com/BBHF810/icebreak-cafe',
+  },
+  {
+    id: 'badminton-scoreboard',
+    title: 'Badminton Scoreboard',
+    subtitle: '音声コール対応 バドミントンスコアボード',
+    type: 'self-initiated',
+    isPrimary: false,
+    period: '2025',
+    role: 'UI設計・音声合成連携・フロントエンド開発',
+    accentColor: '#06b6d4', // cyan
+    summary: '試合中にコート脇からタップ操作で得点をカウントし、Web Speech APIによる音声コールで試合進行を支援するスコアボード。',
+    background: '審判やプレーヤーが得点板とコールに気を取られず試合に集中できるよう、見やすい大画面スコア表示と音声読み上げを組み合わせました。',
+    approach: '体育館の遠くからでも視認できるハイコントラストな数字表示と、iOS/Android両対応の音声発声処理を実装しました。',
+    outcome: 'Web Speech APIを活用したアクセシビリティ・音声インタラクションの基礎を習得しました。',
+    features: ['大画面タッチスコア入力', 'Web Speech APIによる音声自動読み上げ', 'サーバー/レシーバー切り替え表示'],
+    tags: ['自主制作', 'Web Speech API', 'JavaScript', 'HTML/CSS'],
+    demoUrl: 'https://badminton-scoreboard-eight.vercel.app',
+    githubUrl: 'https://github.com/BBHF810/badminton-scoreboard',
   },
   {
     id: 'journal_app',
@@ -169,6 +173,7 @@ export const projects: Project[] = [
     outcome: 'サーバーサイドフレームワークにおけるリレーショナルデータ操作と国際化の基礎を学びました。',
     features: ['日記エントリ管理', '多言語切り替え（i18n）'],
     tags: ['自主制作', 'Python', 'Flask', 'SQLAlchemy', 'Babel'],
+    demoUrl: 'https://journal-app-phi-five.vercel.app',
     githubUrl: 'https://github.com/BBHF810/journal_app',
   }
 ];

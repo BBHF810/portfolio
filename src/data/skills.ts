@@ -13,17 +13,17 @@ export const skillCategories: SkillCategory[] = [
       {
         name: 'UI/UXデザイン & ワイヤーフレーム',
         usage: '情報階層の整理、利用シーンに応じた画面レイアウト・入力フォームの設計',
-        relatedProjects: ['みちのきろく', 'しぶりんノート', 'きもちパレット']
+        relatedProjects: ['みちのきろく', 'しぶりんノート', 'ナンバー・レジェンド']
       },
       {
         name: 'Figma',
         usage: 'ワイヤーフレーム作成、コンポーネント化、画面遷移のインタラクション設計に使用',
-        relatedProjects: ['みちのきろく', 'きもちパレット']
+        relatedProjects: ['みちのきろく', '各プロトタイプ']
       },
       {
         name: '対話・内省デザイン',
-        usage: '心理的負担を軽減する問いかけや、色彩・身体性を伴う入力インターフェースの検討',
-        relatedProjects: ['きもちパレット', '修士研究']
+        usage: '心理的負担を軽減する問いかけや、対話型UI・参加型ワークショップツールの検討',
+        relatedProjects: ['しぶりんノート', '修士研究']
       }
     ]
   },
@@ -34,7 +34,7 @@ export const skillCategories: SkillCategory[] = [
       {
         name: 'React / TypeScript',
         usage: '複数のWebアプリにおいて、画面UIの実装、コンポーネント分割、状態管理に使用',
-        relatedProjects: ['みちのきろく', 'きもちパレット', 'Banquet Record']
+        relatedProjects: ['みちのきろく', 'ナンバー・レジェンド', 'Banquet Record']
       },
       {
         name: 'Tailwind CSS / HTML・CSS',
@@ -42,9 +42,9 @@ export const skillCategories: SkillCategory[] = [
         relatedProjects: ['みちのきろく', 'ポートフォリオ']
       },
       {
-        name: 'Next.js',
-        usage: 'App Routerを用いたWebアプリケーションの構造設計とページ実装に使用',
-        relatedProjects: ['Propose']
+        name: 'JavaScript / Web API',
+        usage: 'Vanilla JSでの軽量SPA構築や、Web Speech API（音声合成）の連携実装',
+        relatedProjects: ['しぶりんノート', 'Badminton Scoreboard']
       },
       {
         name: 'Three.js / React Three Fiber',
@@ -64,8 +64,8 @@ export const skillCategories: SkillCategory[] = [
       },
       {
         name: 'Google Gemini API',
-        usage: 'LLMプロンプトの設計とAPI連携による、対話支援や動的フィードバックの実装',
-        relatedProjects: ['きもちパレット', 'ナンバー・レジェンド']
+        usage: 'LLMプロンプトの設計とAPI連携による、対話支援や動的ヒント提示の実装',
+        relatedProjects: ['ナンバー・レジェンド']
       },
       {
         name: 'Firebase',

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Briefcase, ArrowUpRight, ChevronDown, ChevronUp, Building2, User } from 'lucide-react';
+import { Briefcase, ArrowUpRight, ChevronDown, ChevronUp, Building2, User, ExternalLink } from 'lucide-react';
 import { GithubIcon } from './GithubIcon';
 import { projects } from '../data/projects';
 import { Project } from '../types';
@@ -25,10 +25,10 @@ export const Works: React.FC<WorksProps> = ({ onSelectProject }) => {
             <span>Works & Case Studies</span>
           </div>
           <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900 dark:text-white">
-            実践事例・プロトタイプ
+            実践事例・デプロイ済みプロトタイプ
           </h2>
           <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1 max-w-2xl">
-            現場での課題特定から導入まで取り組んだ事例と、研究・関心に基づき試作した各種Webプロトタイプです。
+            現場での課題特定から導入まで取り組んだ事例と、研究・関心に基づき実装・デプロイしたWebプロトタイプです（すべてWeb上で動作確認いただけます）。
           </p>
         </div>
 
@@ -111,22 +111,35 @@ export const Works: React.FC<WorksProps> = ({ onSelectProject }) => {
                         onClick={() => onSelectProject(project)}
                         className="inline-flex items-center gap-1 text-xs font-semibold text-sky-600 dark:text-sky-400 hover:text-sky-700 dark:hover:text-sky-300 transition-colors group/btn"
                       >
-                        <span>課題・取り組みの詳細を見る</span>
+                        <span>取り組み詳細</span>
                         <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
                       </button>
 
-                      {project.githubUrl && (
-                        <a
-                          href={project.githubUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="p-1 text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors"
-                          title="GitHub Repository"
-                          aria-label="GitHub Repository"
-                        >
-                          <GithubIcon className="w-4 h-4" />
-                        </a>
-                      )}
+                      <div className="flex items-center gap-2">
+                        {project.demoUrl && (
+                          <a
+                            href={project.demoUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-sky-50 dark:bg-sky-950/80 text-sky-700 dark:text-sky-300 text-[11px] font-semibold border border-sky-200/80 dark:border-sky-800/80 hover:bg-sky-100 transition-colors"
+                          >
+                            <span>App</span>
+                            <ExternalLink className="w-2.5 h-2.5" />
+                          </a>
+                        )}
+                        {project.githubUrl && (
+                          <a
+                            href={project.githubUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="p-1 text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors"
+                            title="GitHub Repository"
+                            aria-label="GitHub Repository"
+                          >
+                            <GithubIcon className="w-4 h-4" />
+                          </a>
+                        )}
+                      </div>
                     </div>
                   </div>
                 </article>
@@ -140,10 +153,10 @@ export const Works: React.FC<WorksProps> = ({ onSelectProject }) => {
           <div className="flex items-center justify-between mb-6">
             <div>
               <h3 className="text-sm font-bold text-slate-900 dark:text-white">
-                その他の試作・技術検証アーカイブ
+                その他のデプロイ済み試作アーカイブ
               </h3>
               <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
-                3D WebGL表現、P2P通信、状態管理などの技術的関心から試作したプロジェクトです。
+                音声合成UI、ゲームフィケーション、3D空間描画などの技術的関心から実装・公開した試作です。
               </p>
             </div>
             <button
@@ -166,16 +179,29 @@ export const Works: React.FC<WorksProps> = ({ onSelectProject }) => {
                     <h4 className="text-xs font-bold text-slate-900 dark:text-white">
                       {project.title}
                     </h4>
-                    {project.githubUrl && (
-                      <a
-                        href={project.githubUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-slate-400 hover:text-slate-700 dark:hover:text-slate-200"
-                      >
-                        <GithubIcon className="w-3.5 h-3.5" />
-                      </a>
-                    )}
+                    <div className="flex items-center gap-1.5">
+                      {project.demoUrl && (
+                        <a
+                          href={project.demoUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-sky-600 dark:text-sky-400 hover:underline text-[10px] flex items-center gap-0.5 font-medium"
+                        >
+                          <span>App</span>
+                          <ExternalLink className="w-2.5 h-2.5" />
+                        </a>
+                      )}
+                      {project.githubUrl && (
+                        <a
+                          href={project.githubUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-slate-400 hover:text-slate-700 dark:hover:text-slate-200"
+                        >
+                          <GithubIcon className="w-3.5 h-3.5" />
+                        </a>
+                      )}
+                    </div>
                   </div>
                   <p className="text-[11px] text-slate-500 dark:text-slate-400 mb-2 line-clamp-1">
                     {project.subtitle}
