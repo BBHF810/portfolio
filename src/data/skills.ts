@@ -1,79 +1,103 @@
-import { SkillCategory, DesignProcessStep } from '../types';
+import { SkillCategory } from '../types';
 
 export const skillCategories: SkillCategory[] = [
   {
-    title: 'UI/UX & Design',
-    description: 'ユーザー調査からプロトタイピング、デザインシステムの構築まで',
+    title: '人間中心アプローチ & デザイン',
+    description: '利用者への聞き取り、業務の棚卸しからUI設計・プロトタイピングまで',
     skills: [
-      { name: 'UI/UX Design', level: 'Advanced', description: '課題定義、情報設計、ワイヤーフレーム、デザインシステム' },
-      { name: 'Figma', level: 'Advanced', description: 'Auto Layout、Variables、コンポーネント設計、インタラクティブプロトタイプ' },
-      { name: 'User Research', level: 'Proficient', description: 'ヒアリング、ペルソナ設計、ユーザージャーニーマップ' },
-      { name: 'Design System', level: 'Advanced', description: 'デザイントークン設計、アクセシビリティ考慮（WCAG準拠）' },
-      { name: 'Micro-interaction', level: 'Proficient', description: 'ユーザーの操作感を高める心地よいアニメーション設計' },
+      {
+        name: '利用者調査・業務整理',
+        usage: '現場関係者への聞き取りを通じて業務フローを整理し、情報集約の課題を構造化',
+        relatedProjects: ['みちのきろく', '修士研究']
+      },
+      {
+        name: 'UI/UXデザイン & ワイヤーフレーム',
+        usage: '情報階層の整理、利用シーンに応じた画面レイアウト・入力フォームの設計',
+        relatedProjects: ['みちのきろく', 'しぶりんノート', 'きもちパレット']
+      },
+      {
+        name: 'Figma',
+        usage: 'ワイヤーフレーム作成、コンポーネント化、画面遷移のインタラクション設計に使用',
+        relatedProjects: ['みちのきろく', 'きもちパレット']
+      },
+      {
+        name: '対話・内省デザイン',
+        usage: '心理的負担を軽減する問いかけや、色彩・身体性を伴う入力インターフェースの検討',
+        relatedProjects: ['きもちパレット', '修士研究']
+      }
     ]
   },
   {
-    title: 'Frontend Development',
-    description: 'デザインの意図を寸分狂わず高速に再現するモダンフロントエンド技術',
+    title: 'フロントエンド実装 & プロトタイピング',
+    description: '思考やアイデアを実際に触れるWebアプリケーションとして具現化する技術',
     skills: [
-      { name: 'React (19 / 18)', level: 'Advanced', description: 'Hooks、コンポーネント指向設計、パフォーマンス最適化' },
-      { name: 'TypeScript', level: 'Advanced', description: '厳格な型付け、インターフェース設計、保守性の高いコード' },
-      { name: 'Next.js', level: 'Proficient', description: 'App Router、SSR/SSG、フルスタックWeb開発' },
-      { name: 'Tailwind CSS', level: 'Advanced', description: 'ユーティリティファーストによる高速かつ一貫したスタイリング' },
-      { name: 'Three.js / R3F', level: 'Proficient', description: 'React Three FiberによるWebGL 3Dインタラクティブ表現' },
-      { name: 'HTML5 / Modern CSS', level: 'Advanced', description: 'セマンティックマークアップ、Flex/Grid、レスポンシブWebデザイン' },
+      {
+        name: 'React / TypeScript',
+        usage: '複数のWebアプリにおいて、画面UIの実装、コンポーネント分割、状態管理に使用',
+        relatedProjects: ['みちのきろく', 'きもちパレット', 'Banquet Record']
+      },
+      {
+        name: 'Tailwind CSS / HTML・CSS',
+        usage: 'レスポンシブな画面レイアウトや、見やすさに配慮したスタイル設計に使用',
+        relatedProjects: ['みちのきろく', 'ポートフォリオ']
+      },
+      {
+        name: 'Next.js',
+        usage: 'App Routerを用いたWebアプリケーションの構造設計とページ実装に使用',
+        relatedProjects: ['Propose']
+      },
+      {
+        name: 'Three.js / React Three Fiber',
+        usage: '3D空間表現やインタラクティブなオブジェクト制御のプロトタイピングに使用',
+        relatedProjects: ['Galactic Splat Kids']
+      }
     ]
   },
   {
-    title: 'Backend, BaaS & AI',
-    description: 'プロダクトを支えるデータストア、リアルタイム通信、最新AIの統合',
+    title: 'BaaS・AI連携 & バックエンド',
+    description: 'プロトタイプのデータ永続化や、対話型AI機能の組み込み',
     skills: [
-      { name: 'Supabase / PostgreSQL', level: 'Proficient', description: 'Auth、Database、RLS、Realtime同期' },
-      { name: 'Firebase', level: 'Proficient', description: 'Firestore、Authentication、ホスティング' },
-      { name: 'Google Gemini API', level: 'Proficient', description: 'LLMプロンプトエンジニアリング、マルチモーダルAI連携' },
-      { name: 'WebRTC / PeerJS', level: 'Proficient', description: 'P2P低遅延リアルタイム通信の実装' },
-      { name: 'Python / Flask', level: 'Familiar', description: 'REST API設計、SQLAlchemyによるデータ操作' },
+      {
+        name: 'Supabase / PostgreSQL',
+        usage: 'ユーザー認証、データベーステーブル定義、リアルタイムデータ同期の組み込み',
+        relatedProjects: ['みちのきろく', 'AceRank']
+      },
+      {
+        name: 'Google Gemini API',
+        usage: 'LLMプロンプトの設計とAPI連携による、対話支援や動的フィードバックの実装',
+        relatedProjects: ['きもちパレット', 'ナンバー・レジェンド']
+      },
+      {
+        name: 'Firebase',
+        usage: 'FirestoreおよびAuthenticationを用いた軽量なデータ保存と認証',
+        relatedProjects: ['しぶりんノート']
+      },
+      {
+        name: 'Python / Flask',
+        usage: 'REST APIの基礎構築や、多言語化（i18n）ライブラリの利用経験',
+        relatedProjects: ['Journal App']
+      }
     ]
   },
   {
-    title: 'Tools & Workflow',
-    description: 'チーム開発と迅速なデリバリーを支えるツールチェーン',
+    title: '開発環境 & ツール',
+    description: '日々の開発・バージョン管理・公開を行うためのツール',
     skills: [
-      { name: 'Git / GitHub', level: 'Advanced', description: 'ブランチ戦略、Pull Request運用、Issue管理' },
-      { name: 'Vite / Turbopack', level: 'Advanced', description: '高速なローカル開発環境とビルドパイプライン' },
-      { name: 'Vercel / Cloudflare', level: 'Proficient', description: 'CI/CD自動デプロイ、エッジ環境への配信' },
-      { name: 'VS Code', level: 'Advanced', description: '拡張機能やスニペットを活用した効率的な開発' },
+      {
+        name: 'Git / GitHub',
+        usage: '個人開発でのソースコード管理、コミット履歴の管理、デプロイ連携に使用',
+        relatedProjects: ['全プロジェクト']
+      },
+      {
+        name: 'Vite / Vercel',
+        usage: '高速なローカル開発環境の構築と、Webアプリケーションのホスティング・デプロイ',
+        relatedProjects: ['全プロジェクト']
+      },
+      {
+        name: 'VS Code',
+        usage: '日々のコーディングおよびデバッグ環境として活用',
+        relatedProjects: ['日常的な開発']
+      }
     ]
-  }
-];
-
-export const designProcessSteps: DesignProcessStep[] = [
-  {
-    number: '01',
-    title: 'Discover & Empathize',
-    subtitle: '課題の発見と共感',
-    description: '身の回りや現場で起きている「不便さ」「言いにくい本音」「非効率」に耳を傾け、本質的な課題を特定します。',
-    points: ['ユーザーヒアリング・観察', '課題の構造化・優先度設定', 'ペルソナと利用シーンの具体化']
-  },
-  {
-    number: '02',
-    title: 'Define & Concept',
-    subtitle: '体験設計とコンセプト定義',
-    description: '「どうすればユーザーが迷わず直感的に価値を享受できるか」体験の青写真を描きます。',
-    points: ['ユーザージャーニーマップ作成', '情報アーキテクチャ（IA）整理', 'コアバリューとトーン＆マナー定義']
-  },
-  {
-    number: '03',
-    title: 'Design & Prototype',
-    subtitle: 'UIデザインとインタラクション',
-    description: 'Figma等でワイヤーフレームから高精度プロトタイプへ。余白・タイポグラフィ・動線にこだわったUIを設計します。',
-    points: ['コンポーネント＆トークン設計', '直感的な画面遷移とマイクロインタラクション', 'ユーザビリティテストと改善']
-  },
-  {
-    number: '04',
-    title: 'Develop & Deliver',
-    subtitle: '実装・検証・改善',
-    description: 'React/TypeScriptなどモダンな技術を用い、デザインの意図を損なわずに高品質・高パフォーマンスなプロダクトへ具現化します。',
-    points: ['型安全で保守性の高いコンポーネント実装', 'レスポンシブ・アクセシビリティ対応', '継続的なリファクタリングとフィードバック反映']
   }
 ];

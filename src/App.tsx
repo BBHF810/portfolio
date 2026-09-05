@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
+import { Research } from './components/Research';
 import { About } from './components/About';
 import { Works } from './components/Works';
 import { Process } from './components/Process';
@@ -38,6 +39,7 @@ export function App() {
       <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
       <main className="flex-1">
         <Hero />
+        <Research />
         <About />
         <Works onSelectProject={(p) => setSelectedProject(p)} />
         <Process />

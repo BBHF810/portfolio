@@ -1,27 +1,25 @@
-export type ProjectCategory = 'all' | 'featured' | 'ui-ux' | 'threejs' | 'ai-app' | 'tool';
+export type ProjectType = 'field-practice' | 'self-initiated';
 
 export interface Project {
   id: string;
   title: string;
   subtitle: string;
-  category: ('featured' | 'ui-ux' | 'threejs' | 'ai-app' | 'tool')[];
+  type: ProjectType; // 'field-practice' (実社会での実践・導入事例) | 'self-initiated' (自主制作・プロトタイプ)
+  isPrimary: boolean; // トップに詳細表示する主要作品（3〜4件）
   period?: string;
-  role: string; // 例: UI/UX Design & Frontend, Fullstack, etc.
-  thumbnail?: string;
-  accentColor: string; // カードやタグのアクセントカラー
-  summary: string; // 一覧カードで表示する要約
+  role: string; // 例: 課題調査・要件定義・UI設計・実装
+  accentColor: string;
+  summary: string;
   
   // 詳細モーダル用
-  background: string; // 開発背景・課題意識（Why）
-  targetUser?: string; // 対象ユーザー
-  designHighlights: string[]; // UI/UXデザインのこだわり・工夫点
-  techHighlights: string[]; // 技術的工夫・アーキテクチャ・選定理由
+  background: string; // 開発背景・誰のどんな課題か
+  approach: string; // どのように調査・整理したか / 高橋さんの判断と担当
+  outcome?: string; // 実際の使われ方・変化 / 自主制作での学び・検証結果
   features: string[]; // 主要機能
-  tags: string[]; // 使用技術タグ
+  tags: string[]; // 使用技術・手法
   
   demoUrl?: string;
   githubUrl?: string;
-  isPrivateRepo?: boolean;
 }
 
 export interface SkillCategory {
@@ -29,16 +27,17 @@ export interface SkillCategory {
   description: string;
   skills: {
     name: string;
-    level: string; // 'Advanced' | 'Proficient' | 'Familiar'
-    description?: string;
-    icon?: string;
+    usage: string; // どのような用途・文脈で使用したか
+    relatedProjects?: string[]; // 関連する制作物
   }[];
 }
 
-export interface DesignProcessStep {
-  number: string;
+export interface ResearchInfo {
   title: string;
-  subtitle: string;
-  description: string;
-  points: string[];
+  field: string;
+  affiliation: string;
+  summary: string;
+  background: string;
+  currentApproach: string[];
+  futurePlan: string[];
 }

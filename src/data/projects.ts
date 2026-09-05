@@ -2,264 +2,173 @@ import { Project } from '../types';
 
 export const projects: Project[] = [
   {
-    id: 'shiburin-note',
-    title: 'しぶりんファシリテーター',
-    subtitle: 'きょうだい児ワークショップ進行ナビ＆記録Webアプリ',
-    category: ['featured', 'ui-ux'],
-    period: '2024 - 2025',
-    role: 'UI/UX Design & Frontend Development',
-    accentColor: '#10b981', // emerald
-    summary: '障がいのある兄弟姉妹を持つ「きょうだい児」向けワークショップの進行をサポートし、対話と感情の推移を直感的に記録・可視化するナビゲーションツール。',
-    background: 'ワークショップの現場では、参加者の発言や感情の揺れ動きをリアルタイムに拾い上げ、安心できる空間を作ることが求められます。進行役（ファシリテーター）が操作に気を取られず、参加者との対話に100%集中できるUIを目指して開発しました。',
-    targetUser: 'ワークショップ進行役（ファシリテーター）、きょうだい児の参加者',
-    designHighlights: [
-      '心理的安全性を高めるため、角丸を基調としたやわらかなコンポーネントと「Zen Maru Gothic」フォントを採用',
-      '現在のアジェンダ・残り時間・次のステップが一目でわかるステータスバー設計',
-      '発言やワークの記録をChart.jsを用いてリアルタイムにグラフ化し、振り返りを容易にするビジュアライゼーション'
-    ],
-    techHighlights: [
-      'Vanilla JavaScriptによる軽量でレスポンスの速いSPA構成',
-      'Firebase (Firestore/Auth) を活用したリアルタイムデータ同期とアカウント管理',
-      'Chart.jsの動的データバインディングによるインタラクティブなチャート描画'
-    ],
-    features: [
-      'ステップ別ワークショップ進行ナビゲーション',
-      'リアルタイムログ記録・感情チャート表示',
-      'アカウント・セッション管理（Firebase連携）',
-      '進行タイマーとアラート機能'
-    ],
-    tags: ['JavaScript', 'HTML5/CSS3', 'Chart.js', 'Firebase', 'UI/UX Design'],
-    githubUrl: 'https://github.com/BBHF810/shiburin-note',
-  },
-  {
-    id: 'banquet-record',
-    title: 'Banquet Record',
-    subtitle: '宴会診断＆買い出しマネジメントWebアプリ',
-    category: ['featured', 'ui-ux', 'tool'],
-    period: '2025',
-    role: 'Planning, UI/UX Design & Frontend',
-    accentColor: '#6366f1', // indigo
-    summary: '宅飲みやサークル宴会の幹事の負担を激減させる、インタラクティブなタイプ診断・プランニング・買い出しリスト自動計算アプリ。',
-    background: '飲み会や宅飲みの幹事は「誰がどれくらい飲むか」「予算と買い出し量のバランス」の計算に多くの時間とストレスを抱えています。この課題をステップ形式のスマートなUIで誰でも数分で解決できるように設計しました。',
-    targetUser: 'サークル幹事、宅飲み主催者、友人グループ',
-    designHighlights: [
-      '迷わず直感的に回答できるカード選択式のステップ診断UI',
-      '人数やアルコール強度を選ぶだけで即座に買い出し量・概算予算が更新されるリアクティブUI',
-      'Lucide Reactのアイコンとモダンなカードレイアウトによる視認性の高いダッシュボード'
-    ],
-    techHighlights: [
-      'React 19 + Viteによる最新の高速フロントエンド構成',
-      'React Routerによるシームレスな画面遷移',
-      '診断結果に応じた動的な買い出し量算出ロジックとローカルストレージ連携'
-    ],
-    features: [
-      '飲み会タイプ＆ホストプラン診断機能',
-      '参加人数・予算に応じた買い出しアイテム自動計算',
-      'マイページでの過去の宴会履歴管理',
-      'インタラクティブなチェックリスト'
-    ],
-    tags: ['React 19', 'Vite', 'TypeScript', 'React Router', 'Lucide React', 'UI/UX Design'],
-    githubUrl: 'https://github.com/BBHF810/banquet-record',
-  },
-  {
     id: 'michino',
     title: 'みちのきろく',
-    subtitle: '自由室みちの 学習記録＆コワーキングスペース予約アプリ',
-    category: ['featured', 'ui-ux', 'tool'],
+    subtitle: '自由室みちの 業務整理・学習記録＆スペース予約Webシステム',
+    type: 'field-practice',
+    isPrimary: true,
     period: '2025',
-    role: 'UI/UX Design, Frontend & Supabase Integration',
+    role: '課題調査・業務整理・要件定義・UI設計・Webアプリ実装・運用改善',
     accentColor: '#0ea5e9', // sky
-    summary: 'コワーキング＆学習スペース「自由室みちの」の学生向け学習記録と、社会人向け利用予約を1つの直感的なカレンダーUIに統合したプラットフォーム。',
-    background: '学生の学習ログ管理と、社会人のスペース予約という異なるペルソナの要望を1つのWebアプリでスマートに共存させる必要がありました。複雑になりがちなカレンダーUIを整理し、誰でも直感的に操作できるデザインを追求しました。',
-    targetUser: '施設利用の学生・社会人、施設管理者',
-    designHighlights: [
-      '学習カレンダーとスペース予約を切り替え可能なデュアルモードUI',
-      'Tailwind CSSを活用したミニマルで落ち着いた学習環境に寄り添うカラースキーム',
-      'Gemini APIを活用した学習アドバイスのフィードバックカード表示'
-    ],
-    techHighlights: [
-      'React (Vite) + TypeScript による型安全なコンポーネント設計',
-      'Supabase（PostgreSQL, Auth, RLS）によるセキュアなデータ永続化',
-      'Google Gemini APIとの連携によるAI学習支援機能'
-    ],
+    summary: '代表者に集中していた情報と業務を整理し、複数のスタッフが運営に参加できる仕組みを構築。関係者への聞き取りから要件定義、Webアプリ開発、導入後の改善まで担当した。',
+    background: '学びの場・コワーキングスペース「自由室みちの」において、利用者の利用予約や学生の学習記録などの情報・連絡が代表者個人に集中し、業務の属人化とスタッフ間の情報共有の難しさが生じていました。',
+    approach: '運営関係者への丁寧な聞き取りを行い、日々の業務フローと必要な情報項目を棚卸ししました。その上で、学生向けの直感的な学習ログ機能と、社会人・スタッフ向けの予約管理機能を統合したカレンダーUIを設計・実装しました。',
+    outcome: '代表者一人に集中していた予約受付・記録管理がシステム化され、スタッフ間での状況把握と分業が可能になりました。現場での利用開始後も、スタッフや利用者の声を聞きながらUIの微調整や機能追加を行っています。',
     features: [
-      '日々の学習内容・時間の記録とグラフ可視化',
-      'カレンダーベースのコワーキングスペース予約管理',
-      'Supabase認証＆リアルタイムDB同期',
-      'Gemini APIによる学習アシスト'
+      '直感的なカレンダーベースの予約・利用状況管理',
+      '学生向けの学習内容・時間の記録ダッシュボード',
+      'Supabaseを用いたデータ管理と認証機能',
+      '現場フィードバックに基づく段階的UI改善'
     ],
-    tags: ['React', 'TypeScript', 'Tailwind CSS', 'Supabase', 'Gemini API', 'UI/UX Design'],
+    tags: ['業務整理', '要件定義', 'UI設計', 'React', 'TypeScript', 'Tailwind CSS', 'Supabase'],
     githubUrl: 'https://github.com/BBHF810/michino',
+  },
+  {
+    id: 'shiburin-note',
+    title: 'しぶりんファシリテーター',
+    subtitle: 'きょうだい児ワークショップ進行ナビゲーション（自主制作プロトタイプ）',
+    type: 'self-initiated',
+    isPrimary: true,
+    period: '2024 - 2025',
+    role: 'コンセプト設計・UI/UXデザイン・フロントエンド実装',
+    accentColor: '#10b981', // emerald
+    summary: '障がいのある兄弟姉妹を持つ「きょうだい児」向けワークショップにおいて、進行役が参加者との対話に集中できるよう、時間管理と発言記録を支援する自主制作Webツール。',
+    background: 'ワークショップの進行現場では、タイムキープや板書、参加者の表情・発言への配慮など進行役に多くの認知的負荷がかかります。進行役が対話の空気に集中できるデジタルツールの可能性を模索して試作しました。',
+    approach: '参加者の心理的負担を和らげるため、丸みを帯びたやわらかなトーンのUIと視認性の高いフォントを選定。現在のアジェンダ・残り時間・次のステップが一目でわかる画面構成と、発言記録のチャート可視化を試みました。',
+    outcome: '自主制作としてのプロトタイプ開発を通じ、時間軸に沿った進行支援UIの課題や、ワークショップ現場特有のインタラクション設計に関する知見を得ました。',
+    features: [
+      'ステップ別のワークショップ進行ナビゲーション',
+      'リアルタイムな記録とChart.jsによる推移可視化',
+      '進行タイマーと視覚的アラート'
+    ],
+    tags: ['自主制作', 'UI/UXデザイン', 'JavaScript', 'HTML/CSS', 'Chart.js', 'Firebase'],
+    githubUrl: 'https://github.com/BBHF810/shiburin-note',
   },
   {
     id: 'feeling',
     title: 'きもちパレット (Kimochi Palette)',
-    subtitle: '感情をカラーとAIで可視化・対話するエモーショナルUI',
-    category: ['ui-ux', 'ai-app'],
+    subtitle: '感情の可視化とAI対話による内省支援プロトタイプ（自主制作）',
+    type: 'self-initiated',
+    isPrimary: true,
     period: '2025',
-    role: 'Concept Design, UI/UX & AI Prompt Engineering',
+    role: 'コンセプト設計・UIデザイン・AIプロンプト設計・実装',
     accentColor: '#ec4899', // pink
-    summary: '言葉にしづらい心の状態や気分を「色」と「対話」を通じて表現・言語化し、自己理解を深める感情ケアWebアプリケーション。',
-    background: '「今の気分を言語化してください」と言われても難しいユーザーに対し、色の直感的な選択から入り、AIが優しく壁打ち相手になってくれる新しいインターフェース体験（エモーショナルデザイン）を形にしました。',
-    targetUser: '気持ちの整理をしたい人、自己対話を行いたいユーザー',
-    designHighlights: [
-      '色彩心理に基づいた美しいグラデーションパレットとインタラクティブなカラーピッカー',
-      '心理的な圧迫感のない余白感と心地よいトランジションアニメーション',
-      '感情ログをパレット履歴としてコレクションできるカードデザイン'
-    ],
-    techHighlights: [
-      'React 19 + Vite + TypeScript による最新環境での開発',
-      'Google GenAI SDK (@google/genai) を用いたGemini APIとのリアルタイム感情対話',
-      '感情パラメータに基づくダイナミックCSSテーマ切り替え'
-    ],
+    summary: '言葉にしづらい心の状態や気分を「色」の直感的な選択から言語化し、AIとの対話を通じて自己理解を深めるエモーショナルUIの試作。',
+    background: '「今の気分を文章で入力してください」と言われても言語化が難しいユーザーに対し、色の直感的な選択を入り口とし、AIが壁打ち相手となることで自己の内省を助ける手法を探求しました（自身の修士研究の関心とも接続する試作）。',
+    approach: '色彩心理に基づくグラデーションパレットを用意し、選択した色合いとユーザーの短い呟きを手がかりに、Gemini APIを用いて共感的で圧迫感のない問いかけを生成するプロンプトを設計しました。',
+    outcome: '色の選択という身体的・直感的な入力が、テキスト入力への心理的ハードルをどう下げるかをプロトタイプを通じて検証しました。',
     features: [
-      'カラーパレット選択による感情入力',
-      'Gemini APIを活用した優しい共感＆対話機能',
-      '気持ちの移り変わりを振り返るパレットアーカイブ'
+      'カラーパレット選択による直感的な感情入力',
+      'Google Gemini APIを活用した共感・問いかけ対話',
+      '過去のパレット履歴を振り返るアーカイブ機能'
     ],
-    tags: ['React 19', 'TypeScript', 'Gemini API', 'UI/UX Design', 'Emotional Design'],
+    tags: ['自主制作', 'Human-AI Interaction', 'React 19', 'TypeScript', 'Gemini API'],
     githubUrl: 'https://github.com/BBHF810/feeling',
+  },
+  {
+    id: 'number_legend',
+    title: 'ナンバー・レジェンド',
+    subtitle: 'AI連携・算数学習ゲーミフィケーションプロトタイプ（自主制作）',
+    type: 'self-initiated',
+    isPrimary: true,
+    period: '2025',
+    role: 'ゲームループ設計・UIデザイン・AI連携実装',
+    accentColor: '#14b8a6', // teal
+    summary: '算数や数の概念を楽しく学べる知育ゲーム。学習者のつまずきや回答傾向に応じてAIが動的にヒントや励ましを生成する仕組みを検証。',
+    background: '間違いを恐れず試行錯誤できるポジティブな学習体験をつくるため、ゲーミフィケーションの要素とLLMによる動的ヒント提示を組み合わせたWebUIを試作しました。',
+    approach: '子どもや初学者が迷わないテンキー風の大きなボタン配置と、正解時のフィードバックアニメーションを設計。Gemini APIを活用して回答に応じたヒントを返答するロジックを実装しました。',
+    outcome: '初学者向けUIの操作性や、教育用途におけるAIフィードバックの適切な情報量・トーンの設計についての学びを得ました。',
+    features: [
+      '算数クイズ・パズル形式のゲームループ',
+      'Gemini APIによる動的ヒント提示',
+      '直感的でわかりやすい操作パネル'
+    ],
+    tags: ['自主制作', '知育UI', 'React 19', 'TypeScript', 'Gemini API'],
+    githubUrl: 'https://github.com/BBHF810/number_legend',
   },
   {
     id: 'arata',
     title: 'Galactic Splat Kids',
-    subtitle: '3D Splat Action & インタラクティブ WebGL体験',
-    category: ['threejs', 'ui-ux'],
+    subtitle: '3D WebGL / React Three Fiber インタラクティブ空間試作',
+    type: 'self-initiated',
+    isPrimary: false,
     period: '2025',
-    role: '3D Scene Design & Frontend Engineering',
+    role: '3Dシーン設計・フロントエンド実装',
     accentColor: '#f59e0b', // amber
-    summary: 'React Three FiberとThree.jsを活用した、ブラウザ上で滑らかに動作する3D空間アクション・クリエイティブWeb体験。',
-    background: '従来の2次元UIにとどまらず、WebGL/3D技術を用いたリッチな空間表現とWebフロントエンド技術の融合を探求。軽量かつ爽快な操作性をWebブラウザ上で実現することを目指しました。',
-    targetUser: 'Web上でリッチな3Dインタラクションを楽しみたいユーザー',
-    designHighlights: [
-      'ポップで躍動感のある3Dオブジェクト配置とカメラワーク設計',
-      '3Dワールドと調和する未来的かつクリーンなHUD / UIオーバーレイ',
-      'ポストプロセッシング（ブルーム、トーンマッピング）による高品質なビジュアル演出'
-    ],
-    techHighlights: [
-      'React 19 + Three.js + @react-three/fiber + @react-three/drei による宣言的3D構築',
-      'postprocessing によるシェーダーエフェクトの最適化',
-      'Tailwind CSS によるレスポンシブな操作パネルとゲームUIの統合'
-    ],
-    features: [
-      '3Dキャラクター＆オブジェクトのリアルタイムインタラクション',
-      'カメラコントロールとライティング演出',
-      'ブラウザ環境に最適化されたフレームレート制御'
-    ],
-    tags: ['React 19', 'Three.js', 'React Three Fiber', 'WebGL', 'Tailwind CSS', 'TypeScript'],
+    summary: 'Three.jsとReact Three Fiberを用いたブラウザ上の3D空間アクション・クリエイティブ表現の技術検証。',
+    background: '平面的な2次元UIにとどまらず、WebGLを用いた3D空間表現やカメラワークがユーザー体験に与える没入感を探求するために制作しました。',
+    approach: 'React Three Fiberを活用して宣言的に3Dオブジェクトとカメラを制御し、ポストプロセッシングによるビジュアル調整と軽量な動作の両立を試みました。',
+    outcome: 'Web上での3Dレンダリング制御やパフォーマンスの勘所を習得しました。',
+    features: ['3Dリアルタイム空間描画', 'カメラ操作とライティング演出'],
+    tags: ['自主制作', '3D WebGL', 'Three.js', 'React Three Fiber', 'TypeScript'],
     githubUrl: 'https://github.com/BBHF810/arata',
+  },
+  {
+    id: 'banquet-record',
+    title: 'Banquet Record',
+    subtitle: '宴会診断＆買い出し量自動計算ツール',
+    type: 'self-initiated',
+    isPrimary: false,
+    period: '2025',
+    role: 'UI設計・フロントエンド開発',
+    accentColor: '#6366f1', // indigo
+    summary: '宅飲みや宴会の幹事向けに、参加人数や好みに応じた買い出し量の算出とプランニングを支援するツール。',
+    background: '幹事の買い出し量計算の手間を軽減する目的で、カード選択式のステップ診断UIと動的計算ロジックを実装しました。',
+    approach: '質問に答えるだけで必要な品目と概算予算がリアクティブに算出されるUIをReact 19で構築しました。',
+    outcome: 'ステップフォームにおける状態管理とユーザー導線の設計を学びました。',
+    features: ['ステップ式診断UI', '買い出し量・予算の動的計算'],
+    tags: ['自主制作', 'React 19', 'TypeScript', 'React Router', 'Lucide React'],
+    githubUrl: 'https://github.com/BBHF810/banquet-record',
   },
   {
     id: 'ranking',
     title: 'AceRank',
-    subtitle: '大学バドミントンサークル向け レーティング・ランキングシステム',
-    category: ['tool', 'ui-ux'],
+    subtitle: 'バドミントンサークル向け レーティング・順位管理ツール',
+    type: 'self-initiated',
+    isPrimary: false,
     period: '2025',
-    role: 'UI/UX Design, DB Design & Frontend',
+    role: 'UI設計・DB設計・フロントエンド開発',
     accentColor: '#3b82f6', // blue
-    summary: '体育館や練習場でのスマホ操作に特化した、バドミントン部・サークルの試合結果記録＆自動レート計算システム。',
-    background: '紙やExcelで行われがちだったサークル内の順位付けや試合結果管理を、練習合間にスマホ片手で3秒で入力・確認できるUIへと刷新しました。',
-    targetUser: '大学バドミントンサークルの幹事・部員',
-    designHighlights: [
-      '指が届きやすいボトムナビゲーションと大きなタップターゲット',
-      '勝敗に応じたレーティング推移がひと目でわかるビジュアルランキング',
-      '対戦相手のクイック検索とスムーズなスコア入力フォーム'
-    ],
-    techHighlights: [
-      'React 19 + TypeScript + Vite による軽快なPWAライクな動作',
-      'Supabase Realtime による対戦結果の即時同期',
-      'イロレーティング（Elo rating）アルゴリズムの実装'
-    ],
-    features: [
-      'スマホ特化のクイックスコア入力',
-      'Eloレーティングに基づくランキング自動算出',
-      '個人戦績・対戦履歴のダッシュボード表示'
-    ],
-    tags: ['React 19', 'TypeScript', 'Supabase', 'Vite', 'UI/UX Design'],
+    summary: '練習の合間にスマホ片手で試合結果を入力できるモバイルフレンドリーなレーティング管理システム。',
+    background: 'サークル内の対戦記録を効率化するため、タップしやすいボタン配置とSupabase連携による即時順位算出を試作しました。',
+    approach: '片手操作を意識したボトムナビゲーションと、Elo ratingアルゴリズムによる自動レート更新を実装しました。',
+    outcome: 'モバイルファーストな入力UIとリアルタイムDB同期の実装経験を得ました。',
+    features: ['モバイル向けクイックスコア入力', 'レーティング自動算出'],
+    tags: ['自主制作', 'React 19', 'TypeScript', 'Supabase'],
     githubUrl: 'https://github.com/BBHF810/ranking',
   },
   {
     id: 'propose',
     title: 'Propose',
-    subtitle: 'WebRTC P2P リアルタイム対話＆プロポーザルプラットフォーム',
-    category: ['tool'],
+    subtitle: 'WebRTC P2P リアルタイム対話プロトタイプ',
+    type: 'self-initiated',
+    isPrimary: false,
     period: '2025',
-    role: 'Fullstack & Realtime Network Design',
+    role: 'ネットワーク設計・フロントエンド開発',
     accentColor: '#8b5cf6', // purple
-    summary: 'Next.js 16とPeerJS（WebRTC）を活用し、低遅延かつセキュアなP2P通信でリアルタイムな情報共有を実現するコラボレーションツール。',
-    background: '中央サーバーの負荷や遅延を抑えつつ、ユーザー間でダイレクトにアイデアを共有・提案し合える高速なリアルタイムコミュニケーション基盤を構築しました。',
-    targetUser: 'チームメンバー、コラボレーター',
-    designHighlights: [
-      '接続状態（接続中・待機中・通信中）が直感的にわかるステータスインジケーター',
-      'Next.js Geistフォントを採用した洗練されたミニマルインターフェース'
-    ],
-    techHighlights: [
-      'Next.js 16 (App Router) + React 19 によるSSR/SSGハイブリッド構成',
-      'PeerJS によるWebRTC P2Pデータチャネルの確立とシグナリング処理',
-      'Supabase によるルーム管理とメタデータ同期'
-    ],
-    features: [
-      'P2Pによる超低遅延データ通信',
-      'ルームIDベースの簡単接続',
-      'Supabaseと連携した履歴・提案データ管理'
-    ],
-    tags: ['Next.js 16', 'React 19', 'WebRTC', 'PeerJS', 'Supabase', 'TypeScript'],
+    summary: 'Next.js 16とPeerJS（WebRTC）による、低遅延なP2P通信を用いた情報共有ツールの技術試作。',
+    background: 'サーバー負荷を抑えた端末間ダイレクト通信の仕組みを学ぶため、P2P接続とステータス表示のUIを実装しました。',
+    approach: 'ルームIDによる接続確立と、通信状態（接続中・待機中）の可視化を試みました。',
+    outcome: 'WebRTCのシグナリング手順とP2P状態管理の基礎を習得しました。',
+    features: ['P2Pデータ通信', 'ルーム接続管理'],
+    tags: ['自主制作', 'Next.js 16', 'React 19', 'WebRTC', 'PeerJS'],
     githubUrl: 'https://github.com/BBHF810/propose',
-  },
-  {
-    id: 'number_legend',
-    title: 'ナンバー・レジェンド',
-    subtitle: 'AI連携・算数知育ゲーミフィケーションWebアプリ',
-    category: ['ai-app', 'tool'],
-    period: '2025',
-    role: 'Game Design, UI/UX & AI Integration',
-    accentColor: '#14b8a6', // teal
-    summary: '算数や数字の楽しさを学べる知育ゲーム。Gemini APIがユーザーの回答状況に合わせてリアルタイムにヒントや応援メッセージを生成。',
-    background: '子どもや学習者が「間違えても楽しい」「次も挑戦したくなる」ポジティブな学習体験を、ゲーミフィケーションとAI対話の組み合わせでデザインしました。',
-    targetUser: '小学生・算数を楽しく学びたい学習者',
-    designHighlights: [
-      '親しみやすくワクワクするカードUIと正解時の演出アニメーション',
-      '数字の入力が楽しくなる大きなテンキー風ボタンデザイン'
-    ],
-    techHighlights: [
-      'React 19 + TypeScript + Vite',
-      'Google Gemini API による動的フィードバック＆難易度調整',
-      'Lucide React アイコンを活用した視覚的ナビゲーション'
-    ],
-    features: [
-      '算数クイズ・パズルゲームループ',
-      'Geminiによる動的ヒント＆キャラクター対話',
-      'スコア＆レベルアップシステム'
-    ],
-    tags: ['React 19', 'TypeScript', 'Gemini API', 'Gamification', 'UI/UX Design'],
-    githubUrl: 'https://github.com/BBHF810/number_legend',
   },
   {
     id: 'journal_app',
     title: 'Journal App',
-    subtitle: '多言語対応（i18n）・データ永続化 日記管理Webシステム',
-    category: ['tool'],
+    subtitle: '多言語対応（i18n） 日記管理システム',
+    type: 'self-initiated',
+    isPrimary: false,
     period: '2024',
-    role: 'Backend & Data Modeling',
+    role: 'バックエンド・DB設計',
     accentColor: '#64748b', // slate
-    summary: 'Python (Flask) と SQLAlchemy を用いた、国際化対応（Babel）と堅牢なDB設計を備えたジャーナル・日記管理システム。',
-    background: 'フロントエンドだけでなく、堅牢なバックエンド設計・データベースモデリング・国際化対応（i18n）の知見を深めるために開発したWebアプリケーション。',
-    targetUser: '多言語環境で日々の思考や日記を安全に記録したいユーザー',
-    designHighlights: [
-      '無駄のないクラシックで実用的なテキストエディタUI',
-      '言語切り替え（日本語/英語など）のスムーズなUI'
-    ],
-    techHighlights: [
-      'Python / Flask による軽量かつ保守性の高いRESTful API構成',
-      'SQLAlchemy によるリレーショナルデータモデリング',
-      'Flask-Babel による国際化（i18n / gettext）対応とパスワード暗号化（bcrypt）'
-    ],
-    features: [
-      '日記のエントリ作成・編集・検索',
-      'Flask-Babelによる多言語ローカライズ',
-      'ユーザー認証とセキュアなパスワード管理'
-    ],
-    tags: ['Python', 'Flask', 'SQLAlchemy', 'i18n', 'Babel', 'Database Design'],
+    summary: 'Python (Flask) と SQLAlchemy を用いた、国際化対応（Babel）を備えた日記管理Webシステムの学習制作。',
+    background: 'Webアプリケーションのバックエンド設計と多言語化（i18n）の仕組みを理解するために制作しました。',
+    approach: 'Flask-Babelによる日本語・英語の切り替えと、SQLAlchemyによるデータモデル定義を行いました。',
+    outcome: 'サーバーサイドフレームワークにおけるリレーショナルデータ操作と国際化の基礎を学びました。',
+    features: ['日記エントリ管理', '多言語切り替え（i18n）'],
+    tags: ['自主制作', 'Python', 'Flask', 'SQLAlchemy', 'Babel'],
     githubUrl: 'https://github.com/BBHF810/journal_app',
   }
 ];
