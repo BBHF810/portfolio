@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
+import { Works } from './components/Works';
 import { Research } from './components/Research';
 import { About } from './components/About';
-import { Works } from './components/Works';
 import { Process } from './components/Process';
 import { Skills } from './components/Skills';
 import { Contact } from './components/Contact';
@@ -16,7 +16,7 @@ export function App() {
     if (typeof window !== 'undefined') {
       const saved = localStorage.getItem('theme');
       if (saved) return saved === 'dark';
-      return window.matchMedia('(prefers-color-scheme: dark)').matches;
+      return false;
     }
     return false;
   });
@@ -35,13 +35,13 @@ export function App() {
   }, [darkMode]);
 
   return (
-    <div className="min-h-screen flex flex-col bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 selection:bg-sky-500 selection:text-white transition-colors duration-300">
+    <div className="min-h-screen flex flex-col bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 selection:bg-slate-900 selection:text-white dark:selection:bg-white dark:selection:text-slate-900 transition-colors duration-200">
       <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
       <main className="flex-1">
         <Hero />
+        <Works onSelectProject={(p) => setSelectedProject(p)} />
         <Research />
         <About />
-        <Works onSelectProject={(p) => setSelectedProject(p)} />
         <Process />
         <Skills />
         <Contact />
