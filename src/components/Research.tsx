@@ -1,52 +1,53 @@
 import React from 'react';
+import { ExternalLink } from 'lucide-react';
 import { researchData } from '../data/research';
 
 export const Research: React.FC = () => {
   return (
     <section
       id="research"
-      className="py-16 sm:py-20 px-4 sm:px-6 border-t border-slate-200 dark:border-slate-800"
+      className="py-16 sm:py-20 px-4 sm:px-6 border-t border-slate-200 bg-slate-50/70"
     >
       <div className="max-w-4xl mx-auto">
         <div className="mb-8">
-          <p className="text-xs font-mono text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-1">
+          <p className="text-xs font-mono font-semibold text-sky-700 uppercase tracking-wider mb-1">
             Graduate Research
           </p>
           <div className="flex flex-wrap items-center gap-2 mb-2">
-            <span className="text-xs font-medium px-2.5 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
+            <span className="text-xs font-semibold px-3 py-0.5 rounded-md bg-white border border-slate-200 text-slate-800">
               {researchData.affiliation}
             </span>
-            <span className="text-xs text-slate-500 dark:text-slate-400">
+            <span className="text-xs sm:text-sm text-slate-600 font-medium">
               {researchData.field}
             </span>
           </div>
-          <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white mt-2">
+          <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 mt-2">
             {researchData.title}
           </h2>
-          <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mt-2 leading-relaxed">
+          <p className="text-sm sm:text-base text-slate-800 mt-2.5 leading-relaxed">
             {researchData.summary}
           </p>
         </div>
 
-        <div className="p-6 sm:p-8 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 space-y-6">
+        <div className="p-6 sm:p-8 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-6">
           <div>
-            <h3 className="text-xs font-semibold text-slate-900 dark:text-white mb-2">
+            <h3 className="text-sm font-bold text-slate-900 mb-2">
               研究背景と問題意識
             </h3>
-            <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+            <p className="text-sm sm:text-base text-slate-700 leading-relaxed">
               {researchData.background}
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4 border-t border-slate-100 dark:border-slate-800">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-5 border-t border-slate-200">
             <div>
-              <h3 className="text-xs font-semibold text-slate-900 dark:text-white mb-2.5">
+              <h3 className="text-sm font-bold text-slate-900 mb-3">
                 現在の取り組み
               </h3>
-              <ul className="space-y-2 text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+              <ul className="space-y-2.5 text-xs sm:text-sm text-slate-700 leading-relaxed">
                 {researchData.currentApproach.map((item, idx) => (
-                  <li key={idx} className="flex items-start gap-2">
-                    <span className="text-slate-400 font-mono text-[11px] mt-0.5">
+                  <li key={idx} className="flex items-start gap-2.5">
+                    <span className="text-sky-700 font-mono font-bold text-xs mt-0.5">
                       0{idx + 1}
                     </span>
                     <span>{item}</span>
@@ -56,13 +57,13 @@ export const Research: React.FC = () => {
             </div>
 
             <div>
-              <h3 className="text-xs font-semibold text-slate-900 dark:text-white mb-2.5">
+              <h3 className="text-sm font-bold text-slate-900 mb-3">
                 今後の予定
               </h3>
-              <ul className="space-y-2 text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+              <ul className="space-y-2.5 text-xs sm:text-sm text-slate-700 leading-relaxed">
                 {researchData.futurePlan.map((item, idx) => (
-                  <li key={idx} className="flex items-start gap-2">
-                    <span className="text-slate-400 mt-0.5">•</span>
+                  <li key={idx} className="flex items-start gap-2.5">
+                    <span className="text-sky-700 font-bold">•</span>
                     <span>{item}</span>
                   </li>
                 ))}
@@ -70,14 +71,34 @@ export const Research: React.FC = () => {
             </div>
           </div>
 
-          <div className="pt-4 border-t border-slate-100 dark:border-slate-800 text-xs text-slate-500 dark:text-slate-400">
-            <span>関連する開発システム: </span>
-            <a
-              href="#works"
-              className="text-slate-900 dark:text-white underline underline-offset-4 font-medium hover:opacity-80"
-            >
-              Reflectia（ジャーナリング支援） / AI相互期待感インタビュー
-            </a>
+          {/* 所属研究室・コースの外部リンク */}
+          <div className="pt-5 border-t border-slate-200">
+            <h3 className="text-xs sm:text-sm font-bold text-slate-900 mb-3">
+              所属研究室・コース Webページ
+            </h3>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+              {researchData.links.map((link) => (
+                <a
+                  key={link.url}
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-between gap-2 p-3.5 rounded-xl bg-slate-50 hover:bg-sky-50/70 border border-slate-200 hover:border-sky-300 transition-colors group"
+                >
+                  <div className="min-w-0">
+                    <p className="text-xs sm:text-sm font-semibold text-slate-900 group-hover:text-sky-800 truncate">
+                      {link.label}
+                    </p>
+                    {link.sublabel && (
+                      <p className="text-[11px] font-mono text-slate-500 truncate mt-0.5">
+                        {link.sublabel}
+                      </p>
+                    )}
+                  </div>
+                  <ExternalLink className="w-4 h-4 text-slate-400 group-hover:text-sky-700 shrink-0" />
+                </a>
+              ))}
+            </div>
           </div>
         </div>
       </div>

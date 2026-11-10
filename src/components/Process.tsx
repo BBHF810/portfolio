@@ -51,46 +51,46 @@ export const Process: React.FC = () => {
   return (
     <section
       id="process"
-      className="py-16 sm:py-20 px-4 sm:px-6 border-t border-slate-200 dark:border-slate-800"
+      className="py-16 sm:py-20 px-4 sm:px-6 border-t border-slate-200 bg-slate-50/70"
     >
       <div className="max-w-4xl mx-auto">
         <div className="mb-10">
-          <p className="text-xs font-mono text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-1">
+          <p className="text-xs font-mono font-semibold text-sky-700 uppercase tracking-wider mb-1">
             Process
           </p>
-          <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white">
+          <h2 className="text-2xl sm:text-3xl font-bold text-slate-900">
             課題整理から実装・改善までの進め方
           </h2>
-          <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-1.5">
+          <p className="text-sm sm:text-base text-slate-700 mt-2">
             画面のデザインだけで終わらせず、聞き取りからWebアプリの実装、導入後の改善まで一連で取り組みます。
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
           {steps.map((step) => (
             <div
               key={step.number}
-              className="rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-5 flex flex-col justify-between"
+              className="rounded-xl bg-white border border-slate-200 p-6 shadow-2xs flex flex-col justify-between"
             >
               <div>
-                <span className="font-mono text-xs text-slate-400 dark:text-slate-500 block mb-1.5">
+                <span className="font-mono text-xs font-bold text-sky-700 block mb-1.5">
                   STEP {step.number}
                 </span>
-                <h3 className="text-sm font-bold text-slate-900 dark:text-white mb-2">
+                <h3 className="text-base font-bold text-slate-900 mb-2">
                   {step.title}
                 </h3>
-                <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
+                <p className="text-xs sm:text-sm text-slate-700 leading-relaxed mb-4">
                   {step.description}
                 </p>
               </div>
 
-              <div className="pt-3 border-t border-slate-100 dark:border-slate-800 space-y-1">
+              <div className="pt-3 border-t border-slate-100 space-y-1.5">
                 {step.points.map((pt, pIdx) => (
                   <div
                     key={pIdx}
-                    className="flex items-center gap-2 text-[11px] text-slate-500 dark:text-slate-400"
+                    className="flex items-center gap-2 text-xs text-slate-600"
                   >
-                    <span className="text-slate-400">•</span>
+                    <span className="text-sky-700 font-bold">•</span>
                     <span>{pt}</span>
                   </div>
                 ))}

@@ -8,7 +8,7 @@ export const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="py-8 px-4 sm:px-6 border-t border-slate-200 dark:border-slate-800 text-slate-500 dark:text-slate-400 text-xs">
+    <footer className="py-8 px-4 sm:px-6 border-t border-slate-200 bg-white text-slate-600 text-xs sm:text-sm">
       <div className="max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
         <div>
           <span>
@@ -21,17 +21,17 @@ export const Footer: React.FC = () => {
             href={profile.githubUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-slate-900 dark:hover:text-white transition-colors"
+            className="hover:text-sky-700 transition-colors"
           >
             GitHub
           </a>
-          <span className="text-slate-300 dark:text-slate-700">|</span>
+          <span className="text-slate-300">|</span>
           <button
             onClick={scrollToTop}
-            className="inline-flex items-center gap-1 hover:text-slate-900 dark:hover:text-white transition-colors"
+            className="inline-flex items-center gap-1 hover:text-sky-700 transition-colors"
             aria-label="ページの先頭へ戻る"
           >
-            <span>Top</span>
+            <span>ページの先頭へ</span>
             <ArrowUp className="w-3.5 h-3.5" />
           </button>
         </div>

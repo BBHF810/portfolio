@@ -1,14 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { Moon, Sun, Menu, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { GithubIcon } from './GithubIcon';
 import { profile } from '../data/profile';
 
-interface NavbarProps {
-  darkMode: boolean;
-  setDarkMode: (val: boolean | ((prev: boolean) => boolean)) => void;
-}
-
-export const Navbar: React.FC<NavbarProps> = ({ darkMode, setDarkMode }) => {
+export const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -21,85 +16,76 @@ export const Navbar: React.FC<NavbarProps> = ({ darkMode, setDarkMode }) => {
   }, []);
 
   const navLinks = [
-    { name: 'Works', href: '#works' },
-    { name: 'Research', href: '#research' },
-    { name: 'About', href: '#about' },
-    { name: 'Process', href: '#process' },
-    { name: 'Skills', href: '#skills' },
-    { name: 'Contact', href: '#contact' },
+    { name: '制作事例', href: '#works' },
+    { name: '修士研究', href: '#research' },
+    { name: 'プロフィール', href: '#about' },
+    { name: '進め方', href: '#process' },
+    { name: '技術・経験', href: '#skills' },
+    { name: '連絡先・リンク', href: '#contact' },
   ];
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-40 transition-colors duration-200 ${
+      className={`fixed top-0 left-0 right-0 z-40 transition-all duration-200 ${
         isScrolled
-          ? 'bg-white/90 dark:bg-slate-950/90 backdrop-blur-sm border-b border-slate-200 dark:border-slate-800 py-3'
-          : 'bg-transparent py-4'
+          ? 'bg-white/95 backdrop-blur-sm border-b border-slate-200 shadow-xs py-3'
+          : 'bg-white/80 backdrop-blur-xs border-b border-slate-100 py-4'
       }`}
     >
       <div className="max-w-4xl mx-auto px-4 sm:px-6 flex items-center justify-between">
         <a
           href="#"
-          className="flex items-baseline gap-2 text-slate-900 dark:text-white hover:opacity-80 transition-opacity"
+          className="flex items-baseline gap-2.5 text-slate-900 hover:text-sky-700 transition-colors"
         >
-          <span className="text-sm font-bold tracking-tight">{profile.name}</span>
-          <span className="text-xs text-slate-500 dark:text-slate-400 font-mono">
+          <span className="text-base font-bold tracking-tight">{profile.name}</span>
+          <span className="text-xs text-slate-500 font-mono">
             {profile.nameEn}
           </span>
         </a>
 
-        <nav className="hidden md:flex items-center gap-5 text-xs font-medium">
+        <nav className="hidden md:flex items-center gap-6 text-sm font-medium">
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
-              className="text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors"
+              className="text-slate-700 hover:text-sky-700 transition-colors"
             >
               {link.name}
             </a>
           ))}
         </nav>
 
-        <div className="flex items-center gap-1.5">
+        <div className="flex items-center gap-2">
           <a
             href={profile.githubUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="p-2 rounded-lg text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-slate-200 bg-slate-50 text-slate-700 hover:bg-slate-100 hover:text-slate-900 text-xs font-medium transition-colors"
             title="GitHub"
-            aria-label="GitHub"
           >
             <GithubIcon className="w-4 h-4" />
+            <span className="hidden sm:inline">GitHub</span>
           </a>
 
           <button
-            onClick={() => setDarkMode((prev) => !prev)}
-            className="p-2 rounded-lg text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
-            title={darkMode ? 'ライトモードに切替' : 'ダークモードに切替'}
-            aria-label="テーマ切替"
-          >
-            {darkMode ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
-          </button>
-
-          <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+            className="md:hidden p-2 rounded-lg text-slate-700 hover:bg-slate-100 transition-colors"
             aria-label="メニュー"
           >
-            {mobileMenuOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
+            {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
         </div>
       </div>
 
       {mobileMenuOpen && (
-        <div className="md:hidden bg-white dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800 px-4 pt-2 pb-4">
+        <div className="md:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-4">
           <nav className="flex flex-col gap-1">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className="px-3 py-2 rounded-lg text-xs font-medium text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-900 transition-colors"
+                className="px-3 py-2.5 rounded-lg text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-sky-700 transition-colors"
               >
                 {link.name}
               </a>

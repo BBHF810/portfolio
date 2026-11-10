@@ -1,3 +1,23 @@
+import { ExternalResourceLink } from '../types';
+
+export const affiliationLinks: ExternalResourceLink[] = [
+  {
+    label: '研究室Webページ（中谷研究室）',
+    sublabel: 'nakatani.esd.titech.ac.jp',
+    url: 'https://nakatani.esd.titech.ac.jp/',
+  },
+  {
+    label: 'Future Living Lab',
+    sublabel: 'futurelivinglab.org',
+    url: 'https://futurelivinglab.org/',
+  },
+  {
+    label: '所属コース（エンジニアリングデザインコース）',
+    sublabel: 'www.edp.esd.i.isct.ac.jp',
+    url: 'https://www.edp.esd.i.isct.ac.jp/',
+  },
+];
+
 export const profile = {
   name: '高橋 治彦',
   nameEn: 'Haruhiko Takahashi',
@@ -6,9 +26,10 @@ export const profile = {
   tagline:
     '利用者への聞き取りと課題の整理から、UI設計、Webアプリの試作・実装、導入後の改善まで取り組んでいます。現在は、人の内省や相互理解を支えるHuman-AI Interactionと人間中心設計を研究しています。',
   githubUrl: 'https://github.com/BBHF810',
-  email: 'haruhiko.takahashi.dev@gmail.com',
+  email: 'haruhiko161059@gmail.com',
+  affiliationLinks,
   bio: [
-    '大学院にて、人の内省や家族間の相互理解を支えるインタラクションデザイン（Human-AI Interaction / 人間中心設計）を研究しています。',
+    '大学院のエンジニアリングデザインコース（中谷研究室 / Future Living Lab）にて、人の内省や家族間の相互理解を支えるインタラクションデザイン（Human-AI Interaction / 人間中心設計）を研究しています。',
     '運営現場の関係者への聞き取りから業務を整理し、Webアプリの開発・導入・継続的な改善まで行っている「みちのきろく」のほか、研究・実証実験用のジャーナリング支援システム「Reflectia」、身近な人との期待のすれ違いを振り返る展示用アプリ「AI相互期待感インタビュー」を開発してきました。',
     '現場や利用者が抱える困りごとを丁寧に聞き取り、UI設計からWebアプリケーションの実装まで自ら手を動かしながら、実際に使われる中での課題を見つけて改善を重ねることを大切にしています。',
   ],

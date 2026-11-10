@@ -1,9 +1,10 @@
 import { ResearchInfo } from '../types';
+import { affiliationLinks } from './profile';
 
 export const researchData: ResearchInfo = {
   title: '父親の家族に関する内省支援手法のデザイン',
   field: 'Human-Computer Interaction (HCI) / Human-AI Interaction / 人間中心設計',
-  affiliation: '大学院 修士課程研究',
+  affiliation: '大学院 修士課程（エンジニアリングデザインコース / 中谷研究室）',
   summary:
     '父親が日々の生活の中で家族との関係や自身の価値観を振り返り、今後の関わり方を捉え直すための内省支援手法を研究しています。',
   background:
@@ -17,4 +18,5 @@ export const researchData: ResearchInfo = {
     'ジャーナリング支援システム「Reflectia」や対話型プロトタイプを用いた支援手法の試作・実験',
     '実際の利用者を対象とした利用調査・インタビューを通じた評価と改善',
   ],
+  links: affiliationLinks,
 };

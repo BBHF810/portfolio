@@ -5,17 +5,17 @@ export const Skills: React.FC = () => {
   return (
     <section
       id="skills"
-      className="py-16 sm:py-20 px-4 sm:px-6 border-t border-slate-200 dark:border-slate-800"
+      className="py-16 sm:py-20 px-4 sm:px-6 border-t border-slate-200 bg-white"
     >
       <div className="max-w-4xl mx-auto">
         <div className="mb-10">
-          <p className="text-xs font-mono text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-1">
+          <p className="text-xs font-mono font-semibold text-sky-700 uppercase tracking-wider mb-1">
             Skills & Experience
           </p>
-          <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white">
+          <h2 className="text-2xl sm:text-3xl font-bold text-slate-900">
             扱える技術・使用経験
           </h2>
-          <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-1.5">
+          <p className="text-sm sm:text-base text-slate-700 mt-2">
             各プロジェクトや研究において、どの技術をどのような用途で使用したかをまとめています。
           </p>
         </div>
@@ -24,12 +24,12 @@ export const Skills: React.FC = () => {
           {skillCategories.map((cat) => (
             <div
               key={cat.title}
-              className="rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-5 sm:p-6"
+              className="rounded-xl bg-white border border-slate-200 p-5 sm:p-6 shadow-2xs"
             >
-              <h3 className="text-sm font-bold text-slate-900 dark:text-white mb-1">
+              <h3 className="text-base font-bold text-slate-900 mb-1">
                 {cat.title}
               </h3>
-              <p className="text-xs text-slate-500 dark:text-slate-400 mb-4">
+              <p className="text-xs sm:text-sm text-slate-600 mb-4">
                 {cat.description}
               </p>
 
@@ -37,19 +37,19 @@ export const Skills: React.FC = () => {
                 {cat.skills.map((skill) => (
                   <div
                     key={skill.name}
-                    className="p-3 rounded-lg bg-slate-50 dark:bg-slate-800/40 border border-slate-100 dark:border-slate-800/80"
+                    className="p-3.5 rounded-lg bg-slate-50 border border-slate-200/80"
                   >
                     <div className="flex flex-wrap items-baseline justify-between gap-1 mb-1">
-                      <span className="text-xs font-semibold text-slate-900 dark:text-white">
+                      <span className="text-xs sm:text-sm font-bold text-slate-900">
                         {skill.name}
                       </span>
                       {skill.relatedProjects && skill.relatedProjects.length > 0 && (
-                        <span className="text-[10px] font-mono text-slate-400 dark:text-slate-500">
+                        <span className="text-[11px] font-mono text-sky-700 font-medium">
                           {skill.relatedProjects.join(' / ')}
                         </span>
                       )}
                     </div>
-                    <p className="text-[11px] text-slate-600 dark:text-slate-300 leading-relaxed">
+                    <p className="text-xs sm:text-sm text-slate-700 leading-relaxed">
                       {skill.usage}
                     </p>
                   </div>
